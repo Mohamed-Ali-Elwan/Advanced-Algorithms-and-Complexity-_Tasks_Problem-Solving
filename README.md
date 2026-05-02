@@ -182,7 +182,21 @@ The main objective is to:
 
 ---
 
-## 👨‍💻 Team
+## 👨‍💻 Contributors
+  Name--|--ID--|--	Responsibility
+        |      |
+        |      |
+        |      |
+        |      |
+        |      |
+        |      |
+        |      |
+        |      |
+        |      |
+        |      |
+        |      |
+        |      |
+        
 
 Developed as part of a group project for the Algorithms course.
 
