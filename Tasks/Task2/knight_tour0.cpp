@@ -79,7 +79,7 @@ int main(){
         Result res = greedyTour(n, 0, 0);
         cout << "n=" << n << ": ";
         cout << res.moves << "/" << n*n << "\t";
-        if(res.moves == n*n){
+        if(res.moves == n*n && res.moves!=1){
             cout << "COMPLETE ";
             if(res.isClosed)
                 cout << "(CLOSED)";
