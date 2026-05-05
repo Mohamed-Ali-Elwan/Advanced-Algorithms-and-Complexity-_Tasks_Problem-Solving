@@ -42,7 +42,7 @@ int main()
 		Algorithms::DivideAndConquer::run(Points, k,switcher);
 		Algorithms::IterativeImprovement::run(Points, k,switcher);
 
-		std::cout << "If you Finished Press 1,and if you didn't press 0: "; std::cin >> Finished;
+		std::cout << "Enter number 1 to exit, else enter 0 to continue"; std::cin >> Finished;
 
 	}
 }

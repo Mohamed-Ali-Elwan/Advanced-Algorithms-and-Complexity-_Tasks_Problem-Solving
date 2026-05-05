@@ -6,6 +6,15 @@ namespace Common
 		return sqrt(pow((pointOne.x - pointTwo.x), 2) + pow((pointOne.y - pointTwo.y), 2) + pow((pointOne.z - pointTwo.z),2));
 	}
 
+	bool compareX(const Point& a, const Point& b) {
+		return a.x < b.x;
+	}
+
+	bool compareY(const Point& a, const Point& b) {
+		return a.y < b.y;
+	}
+
+
 	void mergePoints(std::vector<Point>& result, std::vector<Point>& left, std::vector<Point>& right)
 	{
 		result = left;
