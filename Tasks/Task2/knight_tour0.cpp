@@ -67,19 +67,27 @@ int main(){
     int m ,startR, startC;
     cout << "Enter the number n : ";
     cin >> m;
-     cout << "Enter the number startR : ";
+    cout << "Enter the number startR : ";
     cin >> startR;
     cout << "Enter the number startC : ";
     cin >> startC;
     for(int n=1; n<=m; n++){
+        if(n == 1){
+            cout << "n=1: 1/1 COMPLETE (TRIVIAL)\n";
+            continue;
+        }
+        if(n >= 2 && n <= 4){
+            cout << "n=" << n << ": NO TOUR EXISTS\n";
+            continue;
+        }
         if(startR >= n || startC >= n){
             cout << "n=" << n << ": INVALID start position\n";
             continue;
         }
-        Result res = greedyTour(n, 0, 0);
+        Result res = greedyTour(n,  startR, startC);
         cout << "n=" << n << ": ";
         cout << res.moves << "/" << n*n << "\t";
-        if(res.moves == n*n && res.moves!=1){
+        if(res.moves == n*n  ){
             cout << "COMPLETE ";
             if(res.isClosed)
                 cout << "(CLOSED)";
@@ -89,6 +97,5 @@ int main(){
             cout << "FAILED (" << res.moves << "/" << n*n << ")";
         }
 
-        cout << "\n";
     }
 }
