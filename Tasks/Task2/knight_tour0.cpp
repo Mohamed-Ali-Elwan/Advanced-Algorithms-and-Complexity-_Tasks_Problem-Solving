@@ -86,15 +86,15 @@ int main(){
         }
         Result res = greedyTour(n,  startR, startC);
         cout << "n=" << n << ": ";
-        cout << res.moves << "/" << n*n << "\t";
-        if(res.moves == n*n  ){
+        cout << res.moves << "/" << n*n-1 << "\t";
+        if(res.moves == n*n-1  ){
             cout << "COMPLETE ";
             if(res.isClosed)
                 cout << "(CLOSED)";
             else
                 cout << "(OPEN)";
         } else {
-            cout << "FAILED (" << res.moves << "/" << n*n << ")";
+            cout << "FAILED (" << res.moves << "/" << n*n-1 << ")";
         }
 
     }
