@@ -64,10 +64,18 @@ Result greedyTour(int n,int startR,int startC){
     return {moves, closed};
 }
 int main(){
-    int m ;
+    int m ,startR, startC;
     cout << "Enter the number n : ";
     cin >> m;
+     cout << "Enter the number startR : ";
+    cin >> startR;
+    cout << "Enter the number startC : ";
+    cin >> startC;
     for(int n=1; n<=m; n++){
+        if(startR >= n || startC >= n){
+            cout << "n=" << n << ": INVALID start position\n";
+            continue;
+        }
         Result res = greedyTour(n, 0, 0);
         cout << "n=" << n << ": ";
         cout << res.moves << "/" << n*n << "\t";
