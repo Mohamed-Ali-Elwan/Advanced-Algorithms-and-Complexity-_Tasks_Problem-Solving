@@ -6,19 +6,49 @@ namespace Common
 		return sqrt(pow((pointOne.x - pointTwo.x), 2) + pow((pointOne.y - pointTwo.y), 2) + pow((pointOne.z - pointTwo.z),2));
 	}
 
-	bool compareX(const Point& a, const Point& b) {
-		return a.x < b.x;
+	void sort(std::vector <Point>& Points, CompareType type)
+	{
+		for (int i = 0; i < Points.size() - 1; i++)
+		{
+			for (int j = 0; j < Points.size() - i - 1; j++)
+			{
+				bool shouldSwap = false;
+
+				if (type == CompareX)
+				{
+					shouldSwap = Points.at(j).x > Points.at(j + 1).x;
+				}
+				else
+				{
+					shouldSwap = Points.at(j).y > Points.at(j + 1).y;
+				}
+
+				if (shouldSwap)
+				{
+					std::swap(Points.at(j), Points.at(j + 1));
+				}
+			}
+		}
 	}
 
-	bool compareY(const Point& a, const Point& b) {
-		return a.y < b.y;
+	float abs(float result)
+	{
+		if (result < 0)
+		{
+			return -result;
+		}
+		else
+		{
+			return result;
+		}
 	}
-
-
 	void mergePoints(std::vector<Point>& result, std::vector<Point>& left, std::vector<Point>& right)
 	{
 		result = left;
-		result.insert(result.end(), right.begin(), right.end());
+		for (auto point : right)
+		{
+			result.push_back(point);
+		}
 	}
 
 	void logPrint(std::vector <Point> Points, std::vector <int> best_labels, int k, identifier id,Plane switcher)

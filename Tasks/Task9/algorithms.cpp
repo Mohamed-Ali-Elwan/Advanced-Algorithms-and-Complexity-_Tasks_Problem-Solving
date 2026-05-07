@@ -10,12 +10,6 @@
 namespace Algorithms
 {
 
-	/*
-		Clustering Process
-	
-	
-	*/
-
 	namespace BruteForce
 	{
 		float computeCostBruteForce(std::vector<Point>& Points, std::vector<int>& index_labels, int k)
@@ -164,11 +158,9 @@ namespace Algorithms
 		ClosestPair stripClosest(std::vector<Point>& strip, float d, ClosestPair best_res) {
 			float min_dist = d;
 			ClosestPair res = best_res;
-
-			std::sort(strip.begin(), strip.end(), Common::compareY);
-
+			Common::sort(strip, CompareY);
 			for (size_t i = 0; i < strip.size(); ++i) {
-				for (size_t j = i + 1; j < strip.size() && (strip.at(j).y - strip.at(i).y) < min_dist; ++j) {
+				for (size_t j = i + 1; j < strip.size(); ++j) {
 					float dist = Common::calculateDistance(strip.at(i), strip.at(j));
 					if (dist < min_dist) {
 						min_dist = dist;
@@ -182,7 +174,7 @@ namespace Algorithms
 		}
 
 		ClosestPair closestPairUtil(std::vector<Point>& Points, int left, int right) {
-			if (right - left <= 3) {
+			if (right - left <= 3) { // base case since it will be useless if we continued with small points in the two parts
 				ClosestPair res;
 				res.distance = FLT_MAX;
 				for (int i = left; i < right; ++i) {
@@ -208,7 +200,7 @@ namespace Algorithms
 
 			std::vector<Point> strip;
 			for (int i = left; i < right; ++i) {
-				if (std::abs(Points.at(i).x - midPoint.x) < d.distance) {
+				if (Common::abs(Points.at(i).x - midPoint.x) < d.distance) {
 					strip.push_back(Points.at(i));
 				}
 			}
@@ -217,7 +209,8 @@ namespace Algorithms
 		}
 
 		ClosestPair closestPair(std::vector<Point> Points) {
-			std::sort(Points.begin(), Points.end(), Common::compareX);
+			Common::sort(Points, CompareX);
+
 			return closestPairUtil(Points, 0, Points.size());
 		}
 
@@ -226,16 +219,16 @@ namespace Algorithms
 			size_t n = Points.size();
 			
 			// Base case
-			if (n <= k)
+			if (n <= k) // if the number of points are smaller then number of clusters
 			{
 				std::vector<int> labels(n);
-				for (size_t i = 0; i < n; i++) labels[i] = i;
-				return { labels, Points };
+				for (size_t i = 0; i < n; i++) labels.at(i) = i;
+				return { labels, Points }; 
 			}
 
 			std::vector<Point> centers = Points;
 
-			// Agglomerative clustering loop
+			
 			while (centers.size() > k) {
 				ClosestPair res = closestPair(centers);
 

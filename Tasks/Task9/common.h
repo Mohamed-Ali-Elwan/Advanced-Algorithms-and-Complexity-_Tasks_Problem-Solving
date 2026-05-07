@@ -51,11 +51,16 @@ enum Plane
 	ThreeD
 };
 
+enum CompareType
+{
+	CompareX,
+	CompareY
+};
 namespace Common
 {
 	float calculateDistance(Point pointOne, Point pointTwo);
-	bool compareX(const Point& a, const Point& b);
-	bool compareY(const Point& a, const Point& b);
+	float abs(float result);
+	void sort(std::vector <Point>& Points, CompareType type);
 	void calculateCentroids(std::vector <Point> Points, std::vector <int>& index_labels, std::vector <Point>& new_centroids, int k);
 	void logPrint(std::vector <Point> Points, std::vector <int> best_labels, int k, identifier id,Plane switcher);
 	void inputPhase(std::vector <Point>& Points, int& k,Plane switcher);
