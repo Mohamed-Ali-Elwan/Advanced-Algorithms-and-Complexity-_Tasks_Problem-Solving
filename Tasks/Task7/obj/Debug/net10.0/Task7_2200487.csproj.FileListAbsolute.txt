@@ -1,0 +1,14 @@
+A:\Spring25\Algo\Project\Task7_2200487\bin\Debug\net10.0\Task7_2200487.exe
+A:\Spring25\Algo\Project\Task7_2200487\bin\Debug\net10.0\Task7_2200487.deps.json
+A:\Spring25\Algo\Project\Task7_2200487\bin\Debug\net10.0\Task7_2200487.runtimeconfig.json
+A:\Spring25\Algo\Project\Task7_2200487\bin\Debug\net10.0\Task7_2200487.dll
+A:\Spring25\Algo\Project\Task7_2200487\bin\Debug\net10.0\Task7_2200487.pdb
+A:\Spring25\Algo\Project\Task7_2200487\obj\Debug\net10.0\Task7_2200487.GeneratedMSBuildEditorConfig.editorconfig
+A:\Spring25\Algo\Project\Task7_2200487\obj\Debug\net10.0\Task7_2200487.AssemblyInfoInputs.cache
+A:\Spring25\Algo\Project\Task7_2200487\obj\Debug\net10.0\Task7_2200487.AssemblyInfo.cs
+A:\Spring25\Algo\Project\Task7_2200487\obj\Debug\net10.0\Task7_2200487.csproj.CoreCompileInputs.cache
+A:\Spring25\Algo\Project\Task7_2200487\obj\Debug\net10.0\Task7_2200487.dll
+A:\Spring25\Algo\Project\Task7_2200487\obj\Debug\net10.0\refint\Task7_2200487.dll
+A:\Spring25\Algo\Project\Task7_2200487\obj\Debug\net10.0\Task7_2200487.pdb
+A:\Spring25\Algo\Project\Task7_2200487\obj\Debug\net10.0\Task7_2200487.genruntimeconfig.cache
+A:\Spring25\Algo\Project\Task7_2200487\obj\Debug\net10.0\ref\Task7_2200487.dll
